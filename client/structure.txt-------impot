@@ -1,0 +1,90 @@
+.
+├── .cracorc.js
+├── .DS_Store
+├── .env
+├── .gitignore
+├── client@0.1.0
+├── craco
+├── craco.config.js
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── public
+│   ├── .DS_Store
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   ├── mockups
+│   │   ├── .DS_Store
+│   │   ├── business-card-frame.png
+│   │   ├── poster-frame.png
+│   │   └── website-frame.png
+│   └── robots.txt
+├── README.md
+├── src
+│   ├── AnimatedRoutes.jsx
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── components
+│   │   ├── Admin.jsx
+│   │   ├── AdminPortfolioList.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Layout.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── PageWrapper.jsx
+│   │   ├── PortfolioCard.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   ├── ServiceCard.jsx
+│   │   └── Upload.jsx
+│   ├── context
+│   │   └── AuthContext.jsx
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── pages
+│   │   ├── Admin.jsx
+│   │   ├── AdminDashboard.jsx
+│   │   ├── AdminOrders.jsx
+│   │   ├── AIMockup
+│   │   │   ├── AIMockup.jsx
+│   │   │   ├── assets
+│   │   │   │   ├── business-card-frame.png
+│   │   │   │   ├── poster-frame.png
+│   │   │   │   └── website-frame.png
+│   │   │   ├── CanvasEditor.jsx
+│   │   │   ├── ExportControls.jsx
+│   │   │   ├── FrameSelector.jsx
+│   │   │   └── helpers
+│   │   │       ├── backgroundRemover.js
+│   │   │       └── smartFit.js
+│   │   ├── Contact.jsx
+│   │   ├── Feedback.jsx
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── MockupGenerator.jsx
+│   │   ├── MyOrders.jsx
+│   │   ├── Order.jsx
+│   │   ├── OrderForm.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── PortfolioManager.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Register.jsx
+│   │   ├── ServicesManager.jsx
+│   │   └── Upload.jsx
+│   ├── reportWebVitals.js
+│   ├── services
+│   │   └── api.js
+│   ├── setupTests.js
+│   └── utils
+│       └── smartFit.js
+├── structure.txt
+├── structure.txt-------impot
+└── tailwind.config.js
+
+12 directories, 76 files
