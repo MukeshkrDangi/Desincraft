@@ -1,10 +1,10 @@
-const Order = require('../models/order');
+const Order = require('../models/Order');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 const { getAudioDurationInSeconds } = require('get-audio-duration');
 
-// ✅ Create Order & Send Email
+// Create Order & Send Confirmation Email
 const createOrder = async (req, res) => {
   try {
     const {
@@ -29,7 +29,7 @@ const createOrder = async (req, res) => {
 
     await newOrder.save();
 
-    // ✅ Send confirmation email
+    // Send confirmation email
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -65,7 +65,7 @@ const createOrder = async (req, res) => {
   }
 };
 
-// ✅ Get Orders by Client Email
+// Get Orders by Client Email
 const getClientOrders = async (req, res) => {
   try {
     const { email } = req.params;
@@ -76,7 +76,7 @@ const getClientOrders = async (req, res) => {
   }
 };
 
-// ✅ Get Order by ID
+// Get Order by ID
 const getOrderById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -88,7 +88,7 @@ const getOrderById = async (req, res) => {
   }
 };
 
-// ✅ Submit Feedback (with optional voice note)
+// Submit Feedback (optional voice note)
 const submitFeedback = async (req, res) => {
   try {
     const { id } = req.params;
@@ -99,7 +99,7 @@ const submitFeedback = async (req, res) => {
       const filePath = path.join(__dirname, '../uploads', req.file.filename);
 
       const stats = fs.statSync(filePath);
-      const maxSize = 5 * 1024 * 1024;
+      const maxSize = 5 * 1024 * 1024; // 5MB max
       if (stats.size > maxSize) {
         fs.unlinkSync(filePath);
         return res.status(400).json({ message: '❌ Voice note exceeds 5MB limit' });
@@ -132,7 +132,7 @@ const submitFeedback = async (req, res) => {
   }
 };
 
-// ✅ Update Order Status
+// Update Order Status
 const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
@@ -146,7 +146,7 @@ const updateOrderStatus = async (req, res) => {
   }
 };
 
-// ✅ Get All Orders
+// Get All Orders (Admin)
 const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find().sort({ createdAt: -1 });
@@ -156,7 +156,7 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-// ✅ Delete Order
+// Delete Order
 const deleteOrder = async (req, res) => {
   try {
     const { id } = req.params;
@@ -168,7 +168,7 @@ const deleteOrder = async (req, res) => {
   }
 };
 
-// ✅ Admin Dashboard Summary (Fixed Logic)
+// Admin Dashboard Summary
 const getOrderSummary = async (req, res) => {
   try {
     const totalOrders = await Order.countDocuments();
