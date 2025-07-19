@@ -1,0 +1,230 @@
+.
+├── admin
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── README.md
+│   ├── src
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── components
+│   │   │   ├── AdminNavigation.jsx
+│   │   │   ├── Home.js
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── RequireAuth.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Upload.jsx
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── pages
+│   │   │   ├── Admin.jsx
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Login.jsx
+│   │   │   ├── Register.jsx
+│   │   │   └── Upload.jsx
+│   │   ├── reportWebVitals.js
+│   │   ├── services
+│   │   │   └── api.js
+│   │   └── setupTests.js
+│   └── tailwind.config.js
+├── client
+│   ├── client@0.1.0
+│   ├── craco
+│   ├── craco.config.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── public
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   ├── mockups
+│   │   │   ├── business-card-frame.png
+│   │   │   ├── poster-frame.png
+│   │   │   └── website-frame.png
+│   │   └── robots.txt
+│   ├── README.md
+│   ├── src
+│   │   ├── AnimatedRoutes.jsx
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── components
+│   │   │   ├── Admin.jsx
+│   │   │   ├── AdminPortfolioList.jsx
+│   │   │   ├── Banner.jsx
+│   │   │   ├── BannerSlider.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── NewsletterForm.jsx
+│   │   │   ├── PageWrapper.jsx
+│   │   │   ├── PortfolioCard.jsx
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── ServiceCard.jsx
+│   │   │   └── Upload.jsx
+│   │   ├── context
+│   │   │   └── AuthContext.jsx
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── pages
+│   │   │   ├── Admin.jsx
+│   │   │   ├── AdminBannerManager.jsx
+│   │   │   ├── AdminCampaign.jsx
+│   │   │   ├── AdminCouponManager.jsx
+│   │   │   ├── AdminDashboard.jsx
+│   │   │   ├── AdminFeedback.jsx
+│   │   │   ├── AdminOrders.jsx
+│   │   │   ├── AdminSketchMindFeedbacks.jsx
+│   │   │   ├── AdminSubscribers.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── CouponManager.jsx
+│   │   │   ├── Feedback.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── LandingPage.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── MockupGenerator.jsx
+│   │   │   ├── MyOrders.jsx
+│   │   │   ├── Order.jsx
+│   │   │   ├── OrderForm.jsx
+│   │   │   ├── Portfolio.jsx
+│   │   │   ├── PortfolioManager.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── ServicesManager.jsx
+│   │   │   ├── SketchMindFeedback.jsx
+│   │   │   ├── UnsubscribeSuccess.jsx
+│   │   │   └── Upload.jsx
+│   │   ├── reportWebVitals.js
+│   │   ├── services
+│   │   │   └── api.js
+│   │   ├── setupTests.js
+│   │   └── utils
+│   │       └── smartFit.js
+│   ├── structure.txt
+│   ├── structure.txt-------impot
+│   └── tailwind.config.js
+├── package-lock.json
+├── package.json
+├── readme.txt
+├── server
+│   ├── controllers
+│   │   ├── authController.js
+│   │   ├── bannerController.js
+│   │   ├── couponController.js
+│   │   ├── feedbackController.js
+│   │   ├── imageController.js
+│   │   ├── newsletterAdvancedController.js
+│   │   ├── newsletterController.js
+│   │   ├── orderController.js
+│   │   ├── portfolioController.js
+│   │   ├── serviceController.js
+│   │   └── sketchMindController.js
+│   ├── middleware
+│   │   ├── adminMiddleware.js
+│   │   ├── adminOnly.js
+│   │   ├── authMiddleware.js
+│   │   ├── protect.js
+│   │   └── uploadBanner.js
+│   ├── models
+│   │   ├── Banner.js
+│   │   ├── blogModel.js
+│   │   ├── Coupon.js
+│   │   ├── feedbackModel.js
+│   │   ├── newsletterModel.js
+│   │   ├── Order.js
+│   │   ├── Portfolio.js
+│   │   ├── portfolioModel.js
+│   │   ├── Service.js
+│   │   ├── sketchMindFeedbackModel.js
+│   │   ├── subscriberModel.js
+│   │   └── userModel.js
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── routes
+│   │   ├── authRoutes.js
+│   │   ├── bannerRoutes.js
+│   │   ├── couponRoutes.js
+│   │   ├── feedbackRoutes.js
+│   │   ├── imageRoutes.js
+│   │   ├── mockupRoutes.js
+│   │   ├── newsletterAdvancedRoutes.js
+│   │   ├── newsletterRoutes.js
+│   │   ├── orderRoutes.js
+│   │   ├── portfolioRoutes.js
+│   │   ├── ProtectedRoute.jsx
+│   │   ├── serviceRoutes.js
+│   │   └── sketchMindRoutes.js
+│   ├── server.js
+│   └── uploads
+│       ├── 1750501862841.docx
+│       ├── 1750520504534.png
+│       ├── 1750522475802.xlsx
+│       ├── 1750524237075.JPG
+│       ├── 1750530945503.xls
+│       ├── 1750657604178.JPG
+│       ├── 1750663324902.JPG
+│       ├── 1750664279715.png
+│       ├── 1750673501822.png
+│       ├── 1750841912392.webm
+│       ├── 1750842891691.webm
+│       ├── 1750842905183.webm
+│       ├── 1750845100581.webm
+│       ├── 1750845138263.webm
+│       ├── 1750846282266.webm
+│       ├── 1750846287481.webm
+│       ├── 1750846298602.webm
+│       ├── 1750998903756.png
+│       ├── 1750999534189.png
+│       ├── 1751266014080.webm
+│       ├── 1751299258087.png
+│       ├── banners
+│       │   ├── 1751302360139.png
+│       │   └── 1751302601398.png
+│       └── feedback
+│           ├── 1751357859528-feedback.webm
+│           ├── 1751358219034-feedback.webm
+│           ├── 1751358219677-feedback.webm
+│           ├── 1751358219878-feedback.webm
+│           ├── 1751358220061-feedback.webm
+│           ├── 1751358220412-feedback.webm
+│           ├── 1751358220611-feedback.webm
+│           ├── 1751358220978-feedback.webm
+│           ├── 1751358221163-feedback.webm
+│           ├── 1751358221362-feedback.webm
+│           ├── 1751358221562-feedback.webm
+│           ├── 1751358221762-feedback.webm
+│           ├── 1751358221928-feedback.webm
+│           ├── 1751358260571-feedback.webm
+│           ├── 1751361156912-blob
+│           ├── 1751363131863-blob
+│           ├── 1751363389851-blob
+│           ├── 1751363392326-blob
+│           ├── 1751363392757-blob
+│           ├── 1751363392954-blob
+│           ├── 1751363393103-blob
+│           ├── 1751363919708-blob
+│           ├── 1751364668190-sketch.png
+│           ├── 1751366506636-empty.png
+│           ├── 1751367536902-empty.png
+│           ├── 1751387016279-empty.png
+│           ├── 1751387392625-empty.png
+│           └── image-1751354174668.png
+└── structure.txt
+
+24 directories, 204 files
