@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Full height setup for background animations */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Main body styles */
+body {
+  @apply font-sans text-gray-800 dark:text-white;
+  background-color: transparent !important;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Font for code blocks */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
