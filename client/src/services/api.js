@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://designcraft-tqm7.onrender.com';
- // Change to deployed URL in production
+const API_BASE_URL = 'https://designcraft-tqm7.onrender.com';  // Change to deployed URL in production
+
 axios.defaults.withCredentials = true;
 
 // ==================== Services ====================
