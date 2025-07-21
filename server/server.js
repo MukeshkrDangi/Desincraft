@@ -12,19 +12,30 @@ const app = express();
 const PORT = process.env.PORT || 5050;
 
 // ================== CORS Config ==================
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3002',
+  'https://venerable-churros-ef51d1.netlify.app',
+];
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3002'],
+  origin: function (origin, callback) {
+    // Allow requests with no origin like mobile apps or curl
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
 }));
 
 // ================== Security Middleware ==================
 app.use(helmet());
-
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // max requests per IP
+  windowMs: 15 * 60 * 1000,
+  max: 100,
 });
 app.use(limiter);
 
@@ -33,15 +44,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ================== Public Uploads ==================
+// ================== Public Uploads Folder ==================
 app.use(
   '/uploads',
   (req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-    res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-    res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
     next();
   },
   express.static(path.join(__dirname, 'uploads'))
@@ -66,10 +75,10 @@ app.use('/api/services', serviceRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/image', imageRoutes);
 app.use('/api/coupons', couponRoutes);
-app.use('/api/newsletter', newsletterRoutes); // General newsletter
-app.use('/api/newsletter/advanced', newsletterAdvancedRoutes); // Advanced version
+app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/newsletter/advanced', newsletterAdvancedRoutes);
 app.use('/api/banners', bannerRoutes);
-app.use('/api/feedback', feedbackRoutes); // 🔥 SketchMind + Order feedback
+app.use('/api/feedback', feedbackRoutes);
 
 // ================== Root Route ==================
 app.get('/', (req, res) => {
@@ -84,12 +93,14 @@ app.use((req, res) => {
 // ================== Connect to MongoDB ==================
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
-.then(() => console.log('✅ MongoDB connected successfully'))
-.catch(err => console.error('❌ MongoDB connection error:', err));
-
-// ================== Start Server ==================
-app.listen(PORT, () => {
-  console.log(`✅ Server is running at http://localhost:${PORT}`);
+.then(() => {
+  console.log('✅ MongoDB connected successfully');
+  app.listen(PORT, () => {
+    console.log(`✅ Server running at http://localhost:${PORT}`);
+  });
+})
+.catch((err) => {
+  console.error('❌ MongoDB connection error:', err);
 });
